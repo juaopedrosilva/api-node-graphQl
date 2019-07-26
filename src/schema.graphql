@@ -4,11 +4,20 @@ type User {
     email: String!
 }
 
+type Todo {
+    id: String!
+    title: String!
+    createdAt: String!
+}
+
 type Query {
     users: [User!]! 
     user(id: ID!): User
+    todos: [Todo!]! 
+    todo(id: ID!): Todo
 }
 
 type Mutation {
     createUser( name: String!, email: String!): User
+    createTodo( title: String!): Todo
 }
